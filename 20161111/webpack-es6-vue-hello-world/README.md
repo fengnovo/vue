@@ -15,7 +15,7 @@ npm run dev
 npm run build
 ```
   
-参照http://cn.vuejs.org/v2/guide/installation.html生成vue项目  
+参照https://github.com/vuejs-templates/webpack-simple 生成vue项目  
 ```  
 # 全局安装 vue-cli
 $ npm install --global vue-cli
@@ -30,5 +30,3 @@ $ npm run dev
 npm run build出来的项目在dist里面，要在服务器里面才能运行  
 
 
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
