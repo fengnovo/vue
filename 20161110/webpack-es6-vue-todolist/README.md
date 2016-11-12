@@ -23,4 +23,7 @@ $ cd my-project
 $ npm install
 $ npm run dev 
 ```
-
+  
+用components时，命名要相当注意  
+Do not use built-in or reserved HTML elements as component id: Header  
+是说vue保留字不能被命名
