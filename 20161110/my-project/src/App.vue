@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <h1 v-text="title"></h1>
     <ul>
-      <li v-for="item in items" class="finished"></li>
+      <li v-for="item in items" class="finished">{{item.lable}}</li>
     </ul>
   </div>
 </template>

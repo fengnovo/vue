@@ -25,9 +25,9 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(SRC_DIR + 'css/*.css');
-  gulp.watch(SRC_DIR + 'index.html');
-  gulp.watch(SRC_DIR + 'js/*.js');
+  gulp.watch(SRC_DIR + 'css/*.css').on('change', browserSync.reload);
+  gulp.watch(SRC_DIR + 'index.html').on('change', browserSync.reload);
+  gulp.watch(SRC_DIR + 'js/*.js').on('change', browserSync.reload);
 });
 
 gulp.task('clean', function(cb) {
