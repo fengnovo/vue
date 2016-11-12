@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="description" content="gf-info simple">
+    <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+	<title>vue test</title>
+</head>
+<link rel="stylesheet" type="text/css" href="libs/bootstrap-3.3.0-dist/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<script type="text/javascript" src="libs/jquery.min.js"></script>
+<script type="text/javascript" src="libs/bootstrap-3.3.0-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="libs/vue.min.js"></script>
+<body>
+<h3 id="app" class="title">{{text}}</h3>
+
+<div id="content">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>编号</th>
+				<th>书名</th>
+				<th>作者</th>
+				<th>价格</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="book in books">
+				<td>{{book.id}}</td>
+				<td>{{book.name}}</td>
+				<td>{{book.author}}</td>
+				<td>{{book.price}}</td>
+				<td><button type="button" class="btn btn-danger" @click="delBook(book)">删除</button></td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="add-book" class="opera-content">
+		<legend>添加书籍</legend>
+		<div class="form-group">
+			<label for="">书名：</label>
+			<input type="text" class="form-control" v-model="book.name" name="">
+		</div>
+		<div class="form-group">
+			<label for="">作者：</label>
+			<input type="text" class="form-control" v-model="book.author" name="">
+		</div>
+		<div class="form-group">
+			<label for="">价格：</label>
+			<input type="text" class="form-control" v-model="book.price" name="">
+		</div>
+		<button class="btn btn-primary btn-block" @click="addBook()">添加</button>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
