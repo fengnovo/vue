@@ -15,7 +15,7 @@ npm run dev
 npm run build
 ```
   
-参照http://cn.vuejs.org/v2/guide/installation.html 生成vue项目  
+参照https://github.com/vuejs-templates/webpack-simple 生成vue项目
 ```  
 $ npm install -g vue-cli
 $ vue init webpack-simple my-project
