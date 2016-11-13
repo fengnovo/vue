@@ -1,13 +1,13 @@
 <template>
 <div v-bind:class="{isShow: isShow}" class="cent">
   <ToDoHeader></ToDoHeader>
-  <ToDoContent></ToDoContent>
+  <to-do-content></to-do-content>
 </div>
 </template>
 
 <script>
 import ToDoHeader from './components/todo-header.vue';
-import ToDoContent from './components/todo-content.vue';
+import toDoContent from './components/todo-content.vue';
 
 export default {
     name: 'app',
@@ -17,7 +17,7 @@ export default {
       }
     },
     components: {
-      ToDoHeader,ToDoContent
+      ToDoHeader,toDoContent
     }
   }
 </script>
