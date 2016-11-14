@@ -5,6 +5,7 @@
   "author": "fengnovo <fengnoku@gmail.com>",
   "private": true,
   "scripts": {
+    "start": "node build/dev-server.js",
     "dev": "node build/dev-server.js",
     "build": "node build/build.js"
   },
