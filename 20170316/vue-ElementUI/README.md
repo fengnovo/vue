@@ -1,7 +1,6 @@
 # v-e-ui
 
-> A Vue.js project
-
+> A Vue.js project  使用了ElementUI
 ## Build Setup
 
 ``` bash
