@@ -3,23 +3,8 @@
     <header>vue练习</header>
     <nav>
       <ul>
-        <li :class="{active: isClick[0]}" @click="handleClick(0)">
-          <a href="/#/home">内置指令</a>
-        </li>
-        <li :class="{active: isClick[1]}" @click="handleClick(1)">
-          <a href="/#/moban">模板</a>
-        </li>
-        <li :class="{active: isClick[2]}" @click="handleClick(2)">
-          <a href="/#/computedWatch">watch</a>
-        </li>
-        <li :class="{active: isClick[3]}" @click="handleClick(3)">
-          <a href="/#/shenming">申明式与命令式</a>
-        </li>
-        <li :class="{active: isClick[4]}" @click="handleClick(4)">
-          <a href="/#/listFunction">列表</a>
-        </li>
-        <li :class="{active: isClick[5]}" @click="handleClick(5)">
-          <a href="/#/component">组件</a>
+        <li v-for="(item,index) in navState" :class="{active: item.active}" @click="handleClick(index)">
+          <a :href="item.href">{{item.text}}</a>
         </li>
       </ul>  
     </nav>
@@ -34,13 +19,29 @@ export default {
   name: 'app',
   data () {
     return {
-      isClick: [true,false,false,false,false,false]
+      navState: [{
+        text: '内置指令',active: true, href: '/#/home'
+      },{
+        text: '模板',active: false, href: '/#/moban'
+      },{
+        text: 'watch',active: false, href: '/#/computedWatch'
+      },{
+        text: '申明式与命令式',active: false, href: '/#/shenming'
+      },{
+        text: '列表',active: false, href: '/#/listFunction'
+      },{
+        text: '组件',active: false, href: '/#/component'
+      },{
+        text: '生命周期',active: false, href: '/#/shengmingzhouqi'
+      },]
     }
   },
   methods: {
-    handleClick(num){
-      this.isClick = [false,false,false,false,false,false]
-      this.isClick[num] = true
+    handleClick(index){
+      this.navState.forEach((element,i) => {
+        element.active = false
+        i == index ? element.active = true : null
+      })
     }
   }
 }

@@ -7,6 +7,8 @@ import ComputedWatch from '@/components/ComputedWatch'
 import Shenming from '@/components/Shenming'
 import ListFunction from '@/components/ListFunction'
 import Component from '@/components/Component'
+import Shengmingzhouqi from '@/components/Shengmingzhouqi'
+
 
 Vue.use(Router)
 
@@ -51,6 +53,11 @@ export default new Router({
       path: '/component',
       name: 'Component',
       component: Component
-    }
+    },
+    {
+      path: '/shengmingzhouqi',
+      name: 'Shengmingzhouqi',
+      component: Shengmingzhouqi
+    },
   ]
 })
