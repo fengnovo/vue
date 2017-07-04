@@ -8,6 +8,7 @@ import Shenming from '@/components/Shenming'
 import ListFunction from '@/components/ListFunction'
 import Component from '@/components/Component'
 import Shengmingzhouqi from '@/components/Shengmingzhouqi'
+import Aync from '@/advanced/Aync'
 
 
 Vue.use(Router)
@@ -16,7 +17,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: '/',
       component: Home
     },
     {
@@ -58,6 +59,11 @@ export default new Router({
       path: '/shengmingzhouqi',
       name: 'Shengmingzhouqi',
       component: Shengmingzhouqi
+    },
+    {
+      path: '/aync',
+      name: 'Aync',
+      component: Aync
     },
   ]
 })

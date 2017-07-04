@@ -33,6 +33,8 @@ export default {
         text: '组件',active: false, href: '/#/component'
       },{
         text: '生命周期',active: false, href: '/#/shengmingzhouqi'
+      },{
+        text: '异步',active: false, href: '/#/aync'
       },]
     }
   },
