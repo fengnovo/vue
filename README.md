@@ -1,3 +1,9 @@
 # vue
 vue练习  
-test是用vue和gulp写一个todo list
+```
+npm install -g vue-cli
+vue init webpack my-project
+cd my-project
+npm install
+npm run dev 
+```
