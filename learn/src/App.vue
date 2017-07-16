@@ -20,21 +20,21 @@ export default {
   data () {
     return {
       navState: [{
-        text: '内置指令',active: true, href: '/#/home'
+        text: '内置指令',active: true, href: '#/home'
       },{
-        text: '模板',active: false, href: '/#/moban'
+        text: '模板',active: false, href: '#/moban'
       },{
-        text: 'watch',active: false, href: '/#/computedWatch'
+        text: 'watch',active: false, href: '#/computedWatch'
       },{
-        text: '申明式与命令式',active: false, href: '/#/shenming'
+        text: '申明式与命令式',active: false, href: '#/shenming'
       },{
-        text: '列表',active: false, href: '/#/listFunction'
+        text: '列表',active: false, href: '#/listFunction'
       },{
-        text: '组件',active: false, href: '/#/component'
+        text: '组件',active: false, href: '#/component'
       },{
-        text: '生命周期',active: false, href: '/#/shengmingzhouqi'
+        text: '生命周期',active: false, href: '#/shengmingzhouqi'
       },{
-        text: '异步',active: false, href: '/#/aync'
+        text: '异步',active: false, href: '#/aync'
       },]
     }
   },
