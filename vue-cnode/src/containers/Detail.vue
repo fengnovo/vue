@@ -5,7 +5,7 @@
             <div class="nav-text">{{ title }}</div>
         </nav>
         <div v-if="content == ''" class="content-center">
-             <Loading r=52 z=4 c='#65bbce'></Loading> 
+             <loading r=52 z=4 c='#65bbce'></loading>
         </div>  
         <div v-if="content != ''" id="detail">
             <li>
@@ -19,7 +19,7 @@
                 </div>
             </li>
             <div v-html="content"></div>
-            <!-- <Replies {...this.state}/> -->
+            <replies :replies="replies"/>  
         </div>
     </div>
 </template>
@@ -28,8 +28,8 @@
 	import { transTime } from '@/util/time' 
 	import { getScrollTop,getWindowHeight,getScrollHeight } from '@/util/scroll' 
     import { gobalUrl,HomePageLimit } from '@/util/commonConfig' 
-    import loading from '@/components/Loading.vue' 
-console.log(loading)
+    import Loading from '@/components/Loading.vue' 
+    import Replies from '@/containers/Replies.vue' 
   export default {
     data() {
       return {
@@ -46,7 +46,8 @@ console.log(loading)
         }
     },
     components: {
-			
+        Loading,
+        Replies	
     },
     
     created() {
@@ -89,70 +90,6 @@ console.log(loading)
 </script>
 
 <style>
-
-.nav{
-    position: fixed;
-    top: 0;
-    height: 3.3rem;
-    width: 100%;
-    /*background-color: rgb(0, 187, 156);*/
-    background: -webkit-linear-gradient(top, #65bbce, #50b1c8);
-    line-height: 3.3rem;
-    padding: 0 .5rem;
-}
-.nav img{
-    /*width: 4.4rem;*/
-    /*line-height: 3.3rem;*/
-    height: 3.3rem;
-}
-
-.nav .homepage-left-img {
-    width: 4.4rem;
-    float: left;    
-}
-
-.nav .homepage-right-img {
-    margin-top: .7rem;
-    margin-right: 1.2rem;
-    width: 1.6rem;
-    height: 1.6rem;
-    line-height: 3.3rem;
-    float: right;    
-}
-
-.nav-text {
-    /*text-align: center;*/
-    /*margin-left: 4rem;*/
-    color: #fff;
-    font-size: 1.2rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    padding-right: .5rem;
-    /*float: left;*/
-}
-
-.nav .nav-img{
-    position: absolute;
-    margin-top: .2rem;
-    margin-right: 1.2rem;
-    width: 1.6rem;
-    height: 1.6rem;
-    line-height: 3.3rem;
-    /*float: right;*/
-    right: 1rem;
-    top: .5rem;
-}
-
-.nav .btn-back{
-    margin-top: .7rem;
-    margin-right: 1.2rem;
-    width: 1.6rem;
-    height: 1.6rem;
-    line-height: 3.3rem;
-    float: left;
-}
-
 .footer{
     width: 100%;
     height: 3rem;

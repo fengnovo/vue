@@ -12,7 +12,8 @@
 </template>
 
 <script>
-	import { toastIt } from '@/components/Toast' 
+  import { toastIt } from '@/components/Toast' 
+  import { gobalUrl,HomePageLimit } from '@/util/commonConfig' 
 
   export default {
     data() {
@@ -52,7 +53,8 @@
                 if(data.success){
                     data.accesstoken = accesstoken
                     localStorage.setItem('fengnovo.cnode.user',JSON.stringify(data))
-                    history.push(`/user/${data.loginname}`)
+                    
+                    this.$router.push({path: '/user/'+data.loginname})
                 }else{
                     toastIt(`登录失败！${data.error_msg}`, 2000, {fontSize: '18px'})
                 }
@@ -70,69 +72,6 @@
 </script>
 
 <style>
-
-.nav{
-    position: fixed;
-    top: 0;
-    height: 3.3rem;
-    width: 100%;
-    /*background-color: rgb(0, 187, 156);*/
-    background: -webkit-linear-gradient(top, #65bbce, #50b1c8);
-    line-height: 3.3rem;
-    padding: 0 .5rem;
-}
-.nav img{
-    /*width: 4.4rem;*/
-    /*line-height: 3.3rem;*/
-    height: 3.3rem;
-}
-
-.nav .homepage-left-img {
-    width: 4.4rem;
-    float: left;    
-}
-
-.nav .homepage-right-img {
-    margin-top: .7rem;
-    margin-right: 1.2rem;
-    width: 1.6rem;
-    height: 1.6rem;
-    line-height: 3.3rem;
-    float: right;    
-}
-
-.nav-text {
-    /*text-align: center;*/
-    /*margin-left: 4rem;*/
-    color: #fff;
-    font-size: 1.2rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    padding-right: .5rem;
-    /*float: left;*/
-}
-
-.nav .nav-img{
-    position: absolute;
-    margin-top: .2rem;
-    margin-right: 1.2rem;
-    width: 1.6rem;
-    height: 1.6rem;
-    line-height: 3.3rem;
-    /*float: right;*/
-    right: 1rem;
-    top: .5rem;
-}
-
-.nav .btn-back{
-    margin-top: .7rem;
-    margin-right: 1.2rem;
-    width: 1.6rem;
-    height: 1.6rem;
-    line-height: 3.3rem;
-    float: left;
-}
 
 #login .login-from{
     display: block;

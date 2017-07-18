@@ -19,7 +19,7 @@
     name: 'loading',
     props: ['r','z','c'],
     data() {
-      return {r,z,c,wrap: null,ll: null,lr: null}
+      return {wrap: null,ll: null,lr: null}
     },
     computed: {
 			
@@ -31,35 +31,35 @@
         let c = this.c
         this.wrap = {'width': r+'px','height':r+'px'}
         this.ll = {
-                'position': 'absolute',
-                'top': 0,
-                'left': 0,
-                'width': (r-(2*z)) + 'px',
-                'height': (r-(2*z)) + 'px',
-                'borderWidth': z+'px ',
-                'borderStyle': 'solid',
-                'borderColor': c,
-                'borderRadius': '50%',        
-                'borderLeft': z+'px solid transparent',
-                'borderBottom': z+'px solid transparent',
-                'transform': 'rotate(40deg)',
-                'animation': 'animation-circle-left 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite',
-            }
+            'position': 'absolute',
+            'top': 0,
+            'left': 0,
+            'width': (r-(2*z)) + 'px',
+            'height': (r-(2*z)) + 'px',
+            'borderWidth': z+'px ',
+            'borderStyle': 'solid',
+            'borderColor': c,
+            'borderRadius': '50%',        
+            'borderLeft': z+'px solid transparent',
+            'borderBottom': z+'px solid transparent',
+            'transform': 'rotate(40deg)',
+            'animation': 'animation-circle-left 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+        }
         this.lr = {
-                'position': 'absolute',
-                'top': 0,
-                'right': 0,
-                'width': (r-(2*z)) + 'px',
-                'height': (r-(2*z)) + 'px',
-                'borderWidth': z+'px ',
-                'borderStyle': 'solid',
-                'borderColor': c,
-                'borderRadius': '50%',        
-                'borderRight': z+'px solid transparent',
-                'borderBottom': z+'px solid transparent',
-                'transform': 'rotate(-310deg)',
-                'animation': 'animation-circle-right 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite',
-            }
+            'position': 'absolute',
+            'top': 0,
+            'right': 0,
+            'width': (r-(2*z)) + 'px',
+            'height': (r-(2*z)) + 'px',
+            'borderWidth': z+'px ',
+            'borderStyle': 'solid',
+            'borderColor': c,
+            'borderRadius': '50%',        
+            'borderRight': z+'px solid transparent',
+            'borderBottom': z+'px solid transparent',
+            'transform': 'rotate(-310deg)',
+            'animation': 'animation-circle-right 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+        }
     }
   }
 </script>
