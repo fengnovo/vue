@@ -11,4 +11,6 @@ npm run dev
 ## [vue学习总结](https://github.com/fengnovo/vue/tree/master/learn)
 ## [vuex练习](https://github.com/fengnovo/vue/tree/master/vuex-test)
 ## [vue-router练习](https://github.com/fengnovo/vue/tree/master/vue-router-test)
-## [vue-resource练习](https://github.com/fengnovo/vue/tree/master/vue-resource-test)
+## [vue-resource练习](https://github.com/fengnovo/vue/tree/master/vue-resource-test)  
+## [cnodejs.org vue版本](https://github.com/fengnovo/vue/tree/master/vue-cnode)  
+## [cnodejs.org react版本](https://github.com/fengnovo/fengnovo-react-test/tree/master/transition-test)  
