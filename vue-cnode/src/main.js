@@ -12,6 +12,3 @@ var v = new Vue({
   components: { App }
 })
 
-// console.log(v)
-
-// console.log(v === v.$root) //true

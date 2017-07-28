@@ -1,29 +1,50 @@
 <template>
     <div>
-        <div id="editorElem" style="text-align:left"></div>
+        <div id="editorElem" ref="editorElem" style="text-align:left"></div>
     </div>
 </template>
 
 <script>
-    import E from 'wangeditor'
+
+    import E from '../../node_modules/wangeditor/release/wangEditor.js'
+
     export default {
       name: 'editor',
       data () {
         return {
-          editorContent: ''
+          editor: {}
         }
       },
       methods: {
         clickHandle() {
-            // this.props.publishTopic(this.editor.txt.text())
-            console.log(this.editor.txt.text())
+            // let text = this.editor.txt.text()
+            let text = this.editor.$textElem[0].innerText
+            console.log(text)
+            return text
         }
       },
       mounted() {
-        var editor = new E('editorElem')
-        console.log(editor)
-        editor.config.uploadImgShowBase64 = true
-        editor.create()
+        this.editor = new E(this.$refs.editorElem)
+        // editor.customConfig.onchange = (html) => {
+        //   this.editorContent = html
+        // }
+        console.log(this.editor)
+        this.editor.customConfig.uploadImgShowBase64 = true
+        this.editor.create()
       }
     }
 </script>
+
+<style>
+
+.w-e-toolbar {
+    display: block!important;
+}
+.w-e-text-container {
+    height: 400px!important;
+}
+.w-e-toolbar .w-e-menu {
+    display: inline-block!important;
+}
+
+</style>

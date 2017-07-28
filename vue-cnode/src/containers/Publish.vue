@@ -7,9 +7,8 @@
         </nav>
         <div v-if="user.loginname" id="editor">
             <input ref="title" type="text" class="login-text" placeholder="请输入标题"/>
-            <!-- <Editor ref="editor" publishTopic={this.publishTopic}/> -->
-            <editor></editor>
-            <div class="login-btn" @click="clickHandle">发布新话题</div>
+            <editor ref="myeditor"></editor>
+            <div class="login-btn" @click="publishTopic">发布新话题</div>
         </div> 
         <div v-if="!user.loginname" class="publish-from">
             <img src="../assets/unlogin.png" />
@@ -21,6 +20,8 @@
 <script>
     import { gobalUrl,HomePageLimit } from '@/util/commonConfig' 
     import Editor from '@/components/Editor'
+    import { toastIt } from '@/components/Toast' 
+    
   export default {
     data() {
         let user = JSON.parse(localStorage.getItem('fengnovo.cnode.user')) || {}
@@ -33,57 +34,50 @@
     },
     
     methods: {
-        publishTopic(content) {
-    //         let title = this.refs.title.value.replace(/^(\s|\u00A0)+/,'').replace(/(\s|\u00A0)+$/,'')
-    //         let accesstoken = this.state.user.accesstoken
-    //         content = content.replace(/^(\s|\u00A0)+/,'').replace(/(\s|\u00A0)+$/,'')
-    //         if(title == ''){
-    //             toastIt('请输入标题！', 2000, {fontSize: '18px'});
-    //             return
-    //         }
-    //         if(!content){
-    //             toastIt('请输入内容！', 2000, {fontSize: '18px'});
-    //             return
-    //         }
-    //         console.log({
-    //                 accesstoken,
-    //                 title,
-    //                 tab: 'dev',
-    //                 content
-    //             });
-
-    //         fetch(`${gobalUrl}/api/v1/topics`,{
-    //             method:'POST',
-    //             headers: { 
-    //                 'Accept': 'application/json',
-    //                 'Content-Type': 'application/json' 
-    //             },
-    //             body:JSON.stringify({
-    //                 accesstoken,// String 用户的 accessToken
-    //                 title,// String 标题
-    //                 tab: 'dev',
-    // // String 目前有 ask share job dev。开发新客户端的同学，请务必将你们的测试帖发在 dev 专区，以免污染日常的版面，否则会进行封号一周处理。
-    //                 content// String 主体内容
-    //             })
-    //         }).then(res => res.json())
-    //             .then(json => {
-
-    //                 console.log(json)
-                    
-    //                 if(json.success){
-    //                     toastIt('成功', 2000, {fontSize: '18px'});
-    //                     setTimeout(()=>{
-    //                         // this.context.router.push(`/#/detail/${json.topic_id}`)
-    //                         history.push(`/detail/${json.topic_id}`)
-    //                     },2000)
-    //                 }else{
-    //                     toastIt(json.error_msg, 2000, {fontSize: '18px'});
-    //                 }
-    //             })
-    //             .catch(error=>console.log(error))
-        },
-        clickHandle() {
-
+        publishTopic() {
+            let content = this.$refs.myeditor.clickHandle();
+            let title = this.$refs.title.value.replace(/^(\s|\u00A0)+/,'').replace(/(\s|\u00A0)+$/,'')
+            let accesstoken = this.user.accesstoken
+            content = content.replace(/^(\s|\u00A0)+/,'').replace(/(\s|\u00A0)+$/,'')
+            if(title == ''){
+                toastIt('请输入标题！', 2000, {fontSize: '18px'});
+                return
+            }
+            if(!content){
+                toastIt('请输入内容！', 2000, {fontSize: '18px'});
+                return
+            }
+            console.log({
+                accesstoken,
+                title,
+                tab: 'dev',
+                content
+            });
+return
+            fetch(`${gobalUrl}/api/v1/topics`,{
+                method:'POST',
+                headers: { 
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json' 
+                },
+                body:JSON.stringify({
+                    accesstoken,// String 用户的 accessToken
+                    title,// String 标题
+                    tab: 'dev',
+                    content// String 主体内容
+                })
+            }).then(res => res.json())
+                .then(json => {
+                    if(json.success){
+                        toastIt('成功', 2000, {fontSize: '18px'});
+                        setTimeout(()=>{
+                             this.$router.push({path: `/detail/${json.topic_id}`})
+                        },2000)
+                    }else{
+                        toastIt(json.error_msg, 2000, {fontSize: '18px'});
+                    }
+                })
+                .catch(error=>console.log(error))
         },
         handleExit() {
             localStorage.removeItem('fengnovo.cnode.user')
