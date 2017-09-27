@@ -37,14 +37,17 @@ export default {
             if (this.sidebar === 'slideRight') {
                 this.divpop = true;
                 this.sidebar = 'slideLeft';
+                document.querySelector('body').classList.add('body-hidden');
             } else {
                 this.divpop = false;
                 this.sidebar = 'slideRight';
+                document.querySelector('body').classList.remove('body-hidden');
             }
         },
         closeSlide() {
             this.divpop = false;
             this.sidebar = 'slideRight';
+            document.querySelector('body').classList.remove('body-hidden');
         },
     },
     data() {
