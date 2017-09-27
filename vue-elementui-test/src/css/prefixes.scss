@@ -1,0 +1,10 @@
+@mixin prefix($property, $value) {
+    #{$property}: $value;
+    -webkit-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -moz-#{$property}: $value;
+}
+
+@mixin radius($value) {
+    @include prefix(border-radius, $value)
+}

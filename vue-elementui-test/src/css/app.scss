@@ -1,0 +1,116 @@
+@import './const.scss';
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+// .nav {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+// }
+
+// .header {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     width: 100%;
+//     z-index: 3;
+// }
+
+body {
+    position: relative;
+    background-color: #f2f4f8;
+    font: 12px/150% tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\u5b8b\u4f53",sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+::-webkit-scrollbar  {  
+    width: 6px;  
+    height: 16px;  
+    background-color: #F5F5F5;  
+}  
+::-webkit-scrollbar:horizontal {
+    width: 16px;  
+    height: 10px;  
+    background-color: #F5F5F5;  
+} 
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track  {  
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);  
+    border-radius: 4px;  
+    background-color: #F5F5F5;  
+}
+
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb  {  
+    border-radius: 4px;  
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,.3);  
+    background-color: #555;  
+}
+
+#app {
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding: 20px;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    .yzt-container {
+        .content-nav-title {
+            color: #5c5c5c;
+            font-size: $titleFontSize;
+            font-family: $fontFamily;
+            font-weight: $fontWeight;
+            margin-bottom: 10px;
+        }
+        .yzt-container-content {
+            background-color: #fff;
+            padding: 20px 20px 97px 20px;
+            min-height: 700px;
+            font-size: $fontSize;
+            font-family: $fontFamily;
+            font-weight: $fontWeight;
+            color: #5c5c5c;
+            line-height: normal;
+            .rscontent-content {
+                width: 100%;
+                font-size: $fontSize;
+            }
+        }
+
+    }
+
+}

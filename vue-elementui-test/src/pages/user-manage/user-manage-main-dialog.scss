@@ -1,0 +1,40 @@
+.dialog-body {
+    padding: 0 20px 0;
+    .unpass-dialog-note {
+        padding: 0 20px 20px 0;
+    }
+    .unpass-dialog-form {
+        .unpass-dialog-form-select {
+            label {
+                margin: 0 10px 0;
+            }
+            input {
+                width: 300px;
+                border-radius: 0;
+            }
+        }
+        .unpass-dialog-form-textarea {
+            .el-form-item__label {
+                padding: 0;
+                margin: 0 20px 0 0;
+            }
+            .el-textarea {
+                float: left;
+                width: 300px;
+                textarea {
+                    border-radius: 0;
+                }
+            }
+            span {
+                margin-left: 10px;
+                color: rgb(211, 211, 211);
+            }
+        }
+    }
+}
+.dialog-footer {
+    padding: 0 0 0 280px;
+    button {
+        width: 100px;
+    }
+}
