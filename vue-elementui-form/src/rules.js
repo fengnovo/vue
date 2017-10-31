@@ -4,11 +4,11 @@ export const rules = {
             min: [
                 {
                     validator: (r, v, b) => {
-                        console.log('form.creativeElements[1].min');
-                        if (v === '') {
-                            b(new Error('不能为空'));
-                            return;
-                        }
+                        // console.log('form.creativeElements[1].min');
+                        // if (v === '') {
+                        //     b(new Error('不能为空'));
+                        //     return;
+                        // }
                         b();
                     },
                     trigger: 'blur'
@@ -17,11 +17,11 @@ export const rules = {
             max: [
                 {
                     validator: (r, v, b) => {
-                        console.log('form.creativeElements[1].max');
-                        if (v === '') {
-                            b(new Error('不能为空'));
-                            return;
-                        }
+                        // console.log('form.creativeElements[1].max');
+                        // if (v === '') {
+                        //     b(new Error('不能为空'));
+                        //     return;
+                        // }
                         b();
                     },
                     trigger: 'blur'
@@ -32,11 +32,11 @@ export const rules = {
     adSpecGdt: [
         {
             validator: (r, v, b) => {
-                console.log('form.adSpecGdt');
-                if (v === '') {
-                    b(new Error('不能为空'));
-                    return;
-                }
+                // console.log('form.adSpecGdt');
+                // if (v === '') {
+                //     b(new Error('不能为空'));
+                //     return;
+                // }
                 b();
             },
             trigger: 'blur'
@@ -45,11 +45,11 @@ export const rules = {
     adBidTypeCPCFlagMin: [
         {
             validator: (r, v, b) => {
-                console.log('form.adSpecGdt');
-                if (v === '') {
-                    b(new Error('不能为空'));
-                    return;
-                }
+                // console.log('form.adSpecGdt');
+                // if (v === '') {
+                //     b(new Error('不能为空'));
+                //     return;
+                // }
                 b();
             },
             trigger: 'blur'
@@ -58,11 +58,11 @@ export const rules = {
     adBidTypeCPCFlagMax: [
         {
             validator: (r, v, b) => {
-                console.log('form.adSpecGdt');
-                if (v === '') {
-                    b(new Error('不能为空'));
-                    return;
-                }
+                // console.log('form.adSpecGdt');
+                // if (v === '') {
+                //     b(new Error('不能为空'));
+                //     return;
+                // }
                 b();
             },
             trigger: 'blur'

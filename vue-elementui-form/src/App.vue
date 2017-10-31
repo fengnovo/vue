@@ -105,17 +105,17 @@
                             </el-form-item>
                         </div>
                     </el-form-item>
-                    <el-form-item v-if="creativeElements[3]" label="" class="creative-add-label">
+                    <el-form-item v-if="creativeElements[3][1]" label="" class="creative-add-label">
                         <div class="creative-add-area">
                             <div class="creative-add-item-title">图片 <div class="close"
-                                @click="closeCreativeElement(3)"><div class="min-icon-close"></div></div></div>
+                                @click="closeCreativeElement(3,1)"><div class="min-icon-close"></div></div></div>
                             <div>
                                 <el-form-item label="尺寸" label-width="80px" class="creative-add-item" required>
                                     <div class="dsinline">
                                         <el-col :span="5">
                                             <el-form-item prop="creativeSetElementsMinOccurs"
                                                 :rules="[{ validator: validate, trigger: 'blur', type: 'number'}]">
-                                                <el-input placeholder="请输入" type="number" v-model="form.creativeElements[3].width" class="ad-spec-wh-min">
+                                                <el-input placeholder="请输入" type="number" v-model="form.creativeElements[3][1].width" class="ad-spec-wh-min">
                                                     <template slot="prepend">宽</template>
                                                 </el-input>
                                             </el-form-item>
@@ -124,7 +124,7 @@
                                         <el-col :span="5">
                                             <el-form-item prop="creativeSetElementsMaxOccurs"
                                                 :rules="[{ validator: validate, trigger: 'blur', type: 'number'}]">
-                                                <el-input placeholder="请输入" type="number" v-model="form.creativeElements[3].height" class="ad-spec-wh-max">
+                                                <el-input placeholder="请输入" type="number" v-model="form.creativeElements[3][1].height" class="ad-spec-wh-max">
                                                     <template slot="prepend">高</template>
                                                 </el-input>
                                             </el-form-item>
@@ -136,7 +136,7 @@
                                         <el-col :span="16">
                                             <el-form-item prop="creativeSetElementsMinOccurs"
                                                 :rules="[{ validator: validate, trigger: 'blur', type: 'number'}]">
-                                                <el-input placeholder="请输入" type="number" v-model="form.creativeElements[3].picSize">
+                                                <el-input placeholder="请输入" type="number" v-model="form.creativeElements[3][1].picSize">
                                                     <template slot="append">KB</template>
                                                 </el-input>
                                             </el-form-item>
@@ -147,7 +147,7 @@
                                             class="creative-add-item" required 
                                             prop="creativeSetElementsMinOccurs"
                                             :rules="[{ validator: validate, trigger: 'blur', type: 'number'}]">
-                                    <el-checkbox-group v-model="form.creativeElements[3].format">
+                                    <el-checkbox-group v-model="form.creativeElements[3][1].format">
                                         <el-checkbox label="1">jpg</el-checkbox>
                                         <el-checkbox label="2">png</el-checkbox>
                                         <el-checkbox label="4">gif</el-checkbox>
@@ -155,18 +155,192 @@
                                 </el-form-item>
                                 <el-form-item label="界面说明" label-width="80px" class="creative-add-item">
                                     <div class="dsinline">
-                                        <!-- <el-form-item label="界面说明" class="creative-add-item creative-add-item-desc"> -->
-                                            <el-input placeholder="请输入内容" v-model="form.creativeElements[3].picContent"></el-input>
-                                        <!-- </el-form-item> -->
+                                        <el-input placeholder="请输入内容" v-model="form.creativeElements[3][1].picContent"></el-input>
                                     </div>
                                 </el-form-item>
                                 <el-form-item label="添加水印" label-width="80px" class="creative-add-item">
                                     <span style="margin-right: 20px;">水印位置</span>
-                                    <el-radio class="radio" v-model="form.creativeElements[3].position" label="1">左上角样式</el-radio>
-                                    <el-radio class="radio" v-model="form.creativeElements[3].position" label="2">右上角样式</el-radio>
+                                    <el-radio class="radio" v-model="form.creativeElements[3][1].position" label="1">左上角样式</el-radio>
+                                    <el-radio class="radio" v-model="form.creativeElements[3][1].position" label="2">右上角样式</el-radio>
                                     <el-input style="margin-left: 30px;width: 400px;" 
                                             placeholder="请输入" 
-                                            v-model="form.creativeElements[3].picLink">
+                                            v-model="form.creativeElements[3][1].picLink">
+                                        <template slot="prepend">水印链接</template>
+                                    </el-input>
+                                </el-form-item>
+                                <el-form-item label="添加图层" label-width="80px" class="creative-add-item">
+                                    <el-upload
+                                        class="example-preview"
+                                        action="https://jsonplaceholder.typicode.com/posts/"
+                                        :on-preview="handlePreview1"
+                                        :on-remove="handleRemove1"
+                                        :file-list="fileList1"
+                                        list-type="picture">
+                                        <span style="margin-right: 20px;">水印图层</span>
+                                        <el-button size="small" type="primary">点击上传</el-button>
+                                    </el-upload>
+                                    <el-upload
+                                        class="example-preview"
+                                        action="https://jsonplaceholder.typicode.com/posts/"
+                                        :on-preview="handlePreview1"
+                                        :on-remove="handleRemove1"
+                                        :file-list="fileList1"
+                                        list-type="picture">
+                                        <span style="margin-right: 20px;">提示图层</span>
+                                        <el-button size="small" type="primary">点击上传</el-button>
+                                    </el-upload>
+                                </el-form-item>
+                            </div>
+                        </div>
+                    </el-form-item>
+                    <el-form-item v-if="creativeElements[3][2]" label="" class="creative-add-label">
+                        <div class="creative-add-area">
+                            <div class="creative-add-item-title">图片 <div class="close"
+                                @click="closeCreativeElement(3,2)"><div class="min-icon-close"></div></div></div>
+                            <div>
+                                <el-form-item label="尺寸" label-width="80px" class="creative-add-item" required>
+                                    <div class="dsinline">
+                                        <el-col :span="5">
+                                            <el-form-item prop="creativeSetElementsMinOccurs"
+                                                :rules="[{ validator: validate, trigger: 'blur', type: 'number'}]">
+                                                <el-input placeholder="请输入" type="number" v-model="form.creativeElements[3][2].width" class="ad-spec-wh-min">
+                                                    <template slot="prepend">宽</template>
+                                                </el-input>
+                                            </el-form-item>
+                                        </el-col>
+                                        <el-col :span="1">&nbsp;</el-col>
+                                        <el-col :span="5">
+                                            <el-form-item prop="creativeSetElementsMaxOccurs"
+                                                :rules="[{ validator: validate, trigger: 'blur', type: 'number'}]">
+                                                <el-input placeholder="请输入" type="number" v-model="form.creativeElements[3][2].height" class="ad-spec-wh-max">
+                                                    <template slot="prepend">高</template>
+                                                </el-input>
+                                            </el-form-item>
+                                        </el-col>
+                                    </div>
+                                </el-form-item>
+                                <el-form-item label="图片大小" label-width="80px" class="creative-add-item" required>
+                                    <div class="dsinline">
+                                        <el-col :span="16">
+                                            <el-form-item prop="creativeSetElementsMinOccurs"
+                                                :rules="[{ validator: validate, trigger: 'blur', type: 'number'}]">
+                                                <el-input placeholder="请输入" type="number" v-model="form.creativeElements[3][2].picSize">
+                                                    <template slot="append">KB</template>
+                                                </el-input>
+                                            </el-form-item>
+                                        </el-col>
+                                    </div>
+                                </el-form-item>
+                                <el-form-item label="图片格式" label-width="80px" 
+                                            class="creative-add-item" required 
+                                            prop="creativeSetElementsMinOccurs"
+                                            :rules="[{ validator: validate, trigger: 'blur', type: 'number'}]">
+                                    <el-checkbox-group v-model="form.creativeElements[3][2].format">
+                                        <el-checkbox label="1">jpg</el-checkbox>
+                                        <el-checkbox label="2">png</el-checkbox>
+                                        <el-checkbox label="4">gif</el-checkbox>
+                                    </el-checkbox-group>
+                                </el-form-item>
+                                <el-form-item label="界面说明" label-width="80px" class="creative-add-item">
+                                    <div class="dsinline">
+                                            <el-input placeholder="请输入内容" v-model="form.creativeElements[3][2].picContent"></el-input>
+                                    </div>
+                                </el-form-item>
+                                <el-form-item label="添加水印" label-width="80px" class="creative-add-item">
+                                    <span style="margin-right: 20px;">水印位置</span>
+                                    <el-radio class="radio" v-model="form.creativeElements[3][2].position" label="1">左上角样式</el-radio>
+                                    <el-radio class="radio" v-model="form.creativeElements[3][2].position" label="2">右上角样式</el-radio>
+                                    <el-input style="margin-left: 30px;width: 400px;" 
+                                            placeholder="请输入" 
+                                            v-model="form.creativeElements[3][2].picLink">
+                                        <template slot="prepend">水印链接</template>
+                                    </el-input>
+                                </el-form-item>
+                                <el-form-item label="添加图层" label-width="80px" class="creative-add-item">
+                                    <el-upload
+                                        class="example-preview"
+                                        action="https://jsonplaceholder.typicode.com/posts/"
+                                        :on-preview="handlePreview1"
+                                        :on-remove="handleRemove1"
+                                        :file-list="fileList1"
+                                        list-type="picture">
+                                        <span style="margin-right: 20px;">水印图层</span>
+                                        <el-button size="small" type="primary">点击上传</el-button>
+                                    </el-upload>
+                                    <el-upload
+                                        class="example-preview"
+                                        action="https://jsonplaceholder.typicode.com/posts/"
+                                        :on-preview="handlePreview1"
+                                        :on-remove="handleRemove1"
+                                        :file-list="fileList1"
+                                        list-type="picture">
+                                        <span style="margin-right: 20px;">提示图层</span>
+                                        <el-button size="small" type="primary">点击上传</el-button>
+                                    </el-upload>
+                                </el-form-item>
+                            </div>
+                        </div>
+                    </el-form-item>
+                    <el-form-item v-if="creativeElements[3][3]" label="" class="creative-add-label">
+                        <div class="creative-add-area">
+                            <div class="creative-add-item-title">图片 <div class="close"
+                                @click="closeCreativeElement(3,3)"><div class="min-icon-close"></div></div></div>
+                            <div>
+                                <el-form-item label="尺寸" label-width="80px" class="creative-add-item" required>
+                                    <div class="dsinline">
+                                        <el-col :span="5">
+                                            <el-form-item prop="creativeSetElementsMinOccurs"
+                                                :rules="[{ validator: validate, trigger: 'blur', type: 'number'}]">
+                                                <el-input placeholder="请输入" type="number" v-model="form.creativeElements[3][3].width" class="ad-spec-wh-min">
+                                                    <template slot="prepend">宽</template>
+                                                </el-input>
+                                            </el-form-item>
+                                        </el-col>
+                                        <el-col :span="1">&nbsp;</el-col>
+                                        <el-col :span="5">
+                                            <el-form-item prop="creativeSetElementsMaxOccurs"
+                                                :rules="[{ validator: validate, trigger: 'blur', type: 'number'}]">
+                                                <el-input placeholder="请输入" type="number" v-model="form.creativeElements[3][3].height" class="ad-spec-wh-max">
+                                                    <template slot="prepend">高</template>
+                                                </el-input>
+                                            </el-form-item>
+                                        </el-col>
+                                    </div>
+                                </el-form-item>
+                                <el-form-item label="图片大小" label-width="80px" class="creative-add-item" required>
+                                    <div class="dsinline">
+                                        <el-col :span="16">
+                                            <el-form-item prop="creativeSetElementsMinOccurs"
+                                                :rules="[{ validator: validate, trigger: 'blur', type: 'number'}]">
+                                                <el-input placeholder="请输入" type="number" v-model="form.creativeElements[3][3].picSize">
+                                                    <template slot="append">KB</template>
+                                                </el-input>
+                                            </el-form-item>
+                                        </el-col>
+                                    </div>
+                                </el-form-item>
+                                <el-form-item label="图片格式" label-width="80px" 
+                                            class="creative-add-item" required 
+                                            prop="creativeSetElementsMinOccurs"
+                                            :rules="[{ validator: validate, trigger: 'blur', type: 'number'}]">
+                                    <el-checkbox-group v-model="form.creativeElements[3][3].format">
+                                        <el-checkbox label="1">jpg</el-checkbox>
+                                        <el-checkbox label="2">png</el-checkbox>
+                                        <el-checkbox label="4">gif</el-checkbox>
+                                    </el-checkbox-group>
+                                </el-form-item>
+                                <el-form-item label="界面说明" label-width="80px" class="creative-add-item">
+                                    <div class="dsinline">
+                                            <el-input placeholder="请输入内容" v-model="form.creativeElements[3][3].picContent"></el-input>
+                                    </div>
+                                </el-form-item>
+                                <el-form-item label="添加水印" label-width="80px" class="creative-add-item">
+                                    <span style="margin-right: 20px;">水印位置</span>
+                                    <el-radio class="radio" v-model="form.creativeElements[3][3].position" label="1">左上角样式</el-radio>
+                                    <el-radio class="radio" v-model="form.creativeElements[3][3].position" label="2">右上角样式</el-radio>
+                                    <el-input style="margin-left: 30px;width: 400px;" 
+                                            placeholder="请输入" 
+                                            v-model="form.creativeElements[3][3].picLink">
                                         <template slot="prepend">水印链接</template>
                                     </el-input>
                                 </el-form-item>
@@ -815,11 +989,27 @@
                 desc: "文案"
             },
             3: {
-                type: "IMAGE",
-                name: "image",
-                desc: "图片",
-                format: ['1'],
-                position: '1',
+                1: {
+                    type: "IMAGE",
+                    name: "image",
+                    desc: "图片",
+                    format: ['1'],
+                    position: '1'
+                },
+                2: {
+                    type: "IMAGE",
+                    name: "image",
+                    desc: "图片",
+                    format: ['1'],
+                    position: '1'
+                },
+                3: {
+                    type: "IMAGE",
+                    name: "image",
+                    desc: "图片",
+                    format: ['1'],
+                    position: '1'
+                }   
             },
             4: {
                 type: "ENUM",
@@ -982,9 +1172,17 @@
                 actioning: false,
                 options: initOptionsData(),
                 form: initFormData(),
-                creativeElements: {},
+                creativeElements: {
+                    3: {
+                        items: {}  
+                    }
+                },
                 disabledAdd: false,
-                elements: {},
+                elements: {
+                    3: {
+                        items: {}
+                    }
+                },
                 rules,
 
                 creativeSetElements: {},
@@ -1004,9 +1202,17 @@
             initData() {
                 this.options = initOptionsData();
                 this.form = initFormData();
-                this.creativeElements = {};
+                this.creativeElements = {
+                    3: {
+                        items: {}
+                    }
+                };
                 this.disabledAdd = false;
-                this.elements = {};
+                this.elements = {
+                    3: {
+                        items: {}
+                    }
+                };
 
                 this.creativeSetElements = {};
                 this.disabledSetAdd = false;
@@ -1081,20 +1287,50 @@
                     type: 'error'
                 });
             },
+            changElement() {
+                for(let i = 1; i < 4; i++ ) {
+                    if(!this.creativeElements[3].items[i]){
+                        this.creativeElements[3][i] = true;
+                        this.creativeElements[3].items[i] = true;
+                        this.elements[3][i] = true;
+                        this.elements[3].items[i] = true;
+                        this.form.creativeElements[3][i].open = true;
+                        return;
+                    }
+                }
+            },
             addCreativeElement() {
                 let adElement = this.form.adElement;
-                this.disabledAdd = this.elements[adElement] ?  false : true;
-                this.elements[adElement] = true;
-                this.creativeElements[adElement] = true;
-                this.form.creativeElements[adElement].open = true;
+                if(+adElement === 3){
+                    this.changElement();
+                    let items = this.creativeElements[3].items;
+                    this.disabledAdd = (items[1] && items[2] && items[3]) ? false : true;
+                    this.disabledAdd = !this.disabledAdd;
+                }else{
+                    this.disabledAdd = this.elements[adElement] ?  false : true;
+                    this.elements[adElement] = true;
+                    this.creativeElements[adElement] = true;
+                    this.form.creativeElements[adElement].open = true;
+                }
+                
             },
-            closeCreativeElement(adElement) {
-                this.disabledAdd = this.elements[adElement] ?  false : true;
-                this.elements[adElement] = false;
-                this.creativeElements[adElement] = false;
-                this.form.creativeElements[adElement] = initCreativeElementsData()[adElement];
-                let adElementX = this.form.adElement;
-                this.disabledAdd = this.elements[adElementX] ? true : false;
+            closeCreativeElement(adElement, picIndex) {
+                if(picIndex){
+                    this.creativeElements[adElement].items[picIndex] = false;
+                    this.disabledAdd = this.elements[adElement][picIndex] ?  false : true;
+                    this.elements[adElement][picIndex] = false;
+                    this.creativeElements[adElement][picIndex] = false;
+                     this.form.creativeElements[adElement][picIndex] = initCreativeElementsData()[adElement][picIndex];
+                    let adElementX = this.form.adElement;
+                    this.disabledAdd = this.elements[adElementX][picIndex] ? true : false;
+                }else{
+                    this.disabledAdd = this.elements[adElement] ?  false : true;
+                    this.elements[adElement] = false;
+                    this.creativeElements[adElement] = false;
+                    this.form.creativeElements[adElement] = initCreativeElementsData()[adElement];
+                    let adElementX = this.form.adElement;
+                    this.disabledAdd = this.elements[adElementX] ? true : false;
+                }
             },
             initOptions() {
                 let bizTypeMap = dataEnum.bizTypeMap;
@@ -1168,6 +1404,8 @@
                 });
                 console.log(this.form);
                 this.actioning = true;
+                let s = mergeData(this.form);
+                console.log(s);
                 setTimeout(()=>{
                     this.actioning = false;
                 },3000);
@@ -1190,13 +1428,14 @@
                 });
             },
             validate(rule, value, callback,a) {
-                if (value === '') {
-                    callback(new Error('不能为空'));
-                } else if(!/^\d+(?:\.\d{1,2})?$/.test(value)) {
-                    callback(new Error('输入不对'));
-                } else {
-                    callback();
-                }
+                // if (value === '') {
+                //     callback(new Error('不能为空'));
+                // } else if(!/^\d+(?:\.\d{1,2})?$/.test(value)) {
+                //     callback(new Error('输入不对'));
+                // } else {
+                //     callback();
+                // }
+                callback();
             },
         },
         watch: {
@@ -1224,7 +1463,13 @@
             },
             'form.adElement': function() {
                 let adElementX = this.form.adElement;
-                this.disabledAdd = this.creativeElements[adElementX] ? true : false;
+                if(+adElementX !== 3){
+                    this.disabledAdd = this.creativeElements[adElementX] ? true : false;
+                }else{
+                    let items = this.creativeElements[3].items;
+                    this.disabledAdd = (items[1] && items[2] && items[3]) ?  true : false;
+                }
+                
             }
         }
     }

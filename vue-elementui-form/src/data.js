@@ -37,7 +37,9 @@ function mergeCreativeElements(addData, item) {
             });
             addData.images = addData.images ? addData.images : [];
             if (name === 'image') {
-                addData.images.push(imageConst(imageObj));
+                let img = Object.assign({}, { name: "image"+addData.images.length }, imageConst(imageObj));
+                console.log(img);
+                addData.images.push(img);
             }
             if (name === 'image_list') {
                 imageObj.min_occurs = item.setListMin;
@@ -103,7 +105,7 @@ export function mergeCrt(form) {
 
 export function mergeData(form) {
     console.log(form);
-
+    
     let creativeElements = form.creativeElements;
     let creativeSetElements = form.creativeSetElements;
     let addData = {
@@ -118,6 +120,12 @@ export function mergeData(form) {
         let item = creativeElements[i];
         if (item.open) {
             mergeCreativeElements(addData, item);
+        }
+        if (+i === 3) {
+            for (var j in item) {
+                debugger
+                mergeCreativeElements(addData, item[j]);
+            }
         }
     }
     if (creativeSetElements.open) {
