@@ -16,7 +16,7 @@ const mutations = {  //mutation 突变，改变
 }
 
 //每操作一次count给count加100，不管加还是减   
-const getters = {
+const getters = { 
     count(state) {
         return state.count += 100;
     }
@@ -24,13 +24,15 @@ const getters = {
 
 const actions = {
     addAction(context) {
+        console.log('add');
         context.commit('add',10)
         setTimeout(()=>{
             context.commit('reduce',1)  //异步
         },1000 )
     },
-    reduceAction(context) {
-        context.commit('reduce',5)
+    reduceAction({commit}) {
+        console.log('reduce');
+        commit('reduce',5)   // 提交给突变mutations
     }
 }
 
