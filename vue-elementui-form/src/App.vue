@@ -945,7 +945,7 @@
                             <el-button size="small" type="primary" :disabled="form.imgUrlDisabled2">点击上传</el-button>
                         </el-upload>
                     </el-form-item>
-                    <el-form-item label="规格名称" prop="adBidTypeCPCFlagMin" required>
+                    <el-form-item label="规格名称" prop="adBidName" required>
                         <el-input v-model="form.adSpecName" placeholder="请输入名称" class="ad-spec-name-input"></el-input>
                     </el-form-item>
                     <el-form-item label="规格ID同步" prop="adSpecGdt" required>
@@ -1048,8 +1048,8 @@
 </template>
 
 <script>
-import Appa from './app.js';
-export default Appa;
+import App from './app.js';
+export default App;
 </script>
 
 <style lang="scss">

@@ -123,7 +123,6 @@ export function mergeData(form) {
         }
         if (+i === 3) {
             for (var j in item) {
-                debugger
                 mergeCreativeElements(addData, item[j]);
             }
         }
