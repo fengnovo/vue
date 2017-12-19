@@ -1,0 +1,93 @@
+// 右侧滑进，右进右出
+.slide-right-to-right-enter-active {
+  transition: all .3s ease;
+}
+
+.slide-right-to-right-leave-active {
+  transition: all .3s ease-in;
+}
+
+.slide-right-to-right-enter,
+.slide-right-to-right-leave-to {
+  transform: translateX(1000px);
+}
+
+// 渐隐渐现
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .5s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// 右侧弹进
+.bounce-in-right-enter-active {
+  animation: moveFromRightFade .4s ease-out;
+}
+//.bounce-in-right-leave-to {
+//  animation: scaleDown .2s;
+//}
+.bounce-in-right-enter {
+  transform: translateX(1000px);
+}
+
+@keyframes moveFromRightFade {
+  0%, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(3000px, 0, 0)
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(225px, 0, 0)
+  }
+
+  75% {
+    transform: translate3d(100px, 0, 0)
+  }
+
+  90% {
+    transform: translate3d(5px, 0, 0)
+  }
+
+  to {
+    transform: none
+  }
+}
+
+.scale-out-down-leave-to {
+  animation: scaleDown .3s;
+}
+@keyframes scaleDown {
+  from {
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(.8);
+    transform: scale(.8);
+  }
+}
+
+.fade-in-down-enter-active {
+  animation: fadeInDown .2s;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,-100%,0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+

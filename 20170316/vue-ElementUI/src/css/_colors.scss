@@ -1,0 +1,86 @@
+// 背景色
+$bg-main-color: #f2f4f8; // 主背景色
+$bg-top-bar-color: #444; // 顶部bar背景色
+$bg-aside-bar-color: #ffffff; // 侧边bar背景色
+$bg-aside-hover-color: #f2f4f8; // 侧边bar hover时的背景色
+$bg-aside-logo-color: #444; // 侧边bar logo的背景色
+$bg-aside-bottom-menu-color: #f2f4f8; // 侧边bar底部menu背景色
+$bg-content-color: #ffffff; // 内容背景色
+$bg-img-fill-color: #f4f7fa; // 图片背景填充色
+$bg-btn-default-color: #f2f7fa;
+$bg-dmp-select-color: #eceef3; // 选中背景色
+$bg-dmp-hover-color: #fafafa;
+$bg-dmp-info-color: #f3f4f8; // 所选信息背景
+$bg-modal-default-color: #f3f4f8;
+$bg-modal-header-color: #fff;
+$bg-modal-body-color: #fff;
+$bg-sub-menu-color: #f4f7fa;	// aside导航子导航背景色
+$bg-login-nav-color: #fff; // 登录页导航栏背景
+
+// 字体颜色
+$text-color-main: #5c5c5c; // 主文字色
+$text-color-describe: #a0a2a3; // 提示描述性文字色
+$text-color-aside-bar: #66626d; // 左侧bar文字色
+$text-color-aside-selected: #444; // 左侧bar选中时字体颜色
+$text-color-link: #444; // 可点击文字颜色
+$text-color-top-bar: #ffffff; // 顶部bar字体颜色
+$text-color-pagepath: #76838f; // 页面路径字体颜色
+$text-color-pagepath-pass: #444; // 页面路径已经过的字体颜色
+$text-color-step-unpass: #b5b5b5; // step步骤未完成字体颜色
+$text-color-step-pass: #444; // step步骤已完成字体颜色
+$text-color-ad-detail: #4a4b4f; // 博客详情展开中的文字颜色
+$text-color-default: #5c5c5c; // 默认按钮文字颜色
+$text-color-danger: #ff4446; // 红色文字
+$text-color-blue: #119dff; // 蓝色文字
+
+// 弹窗
+$toast-success-color: #00ceac; // 成功底色
+$toast-error-color: #ff4446; // 失败底色
+$tip-title-bg: #f4f7fa; // 对话框标题背景色
+$tip-title-del-bg: #eceef3; // 对话框叉底色
+$tip-title-del-color: #5c5c5c; // 叉本身的颜色
+$modal-mask-bg-color: rgba(0, 0, 0, .5); //modal背景蒙层颜色
+$modal-header-shadow-color: #eee;
+
+// 控件颜色
+$form-selected-color: #119dff; // 单选框，复选款，下拉框控件选中颜色
+$form-focus-border-color: #495fdf; // 输入框，选择框聚焦时边框颜色
+$form-button-danger: #ff4446; // 按钮danger色
+$form-button-default: #f4f7fa; // 按钮default色
+$form-button-primary: #465fdf;// 按钮primary色
+$form-button-blue: #119dff;// 按钮primary色
+$form-button-gray: #eceef3;// 按钮灰色
+$form-border-color-default: #eceef3;  // 输入框，输入框边框颜色
+$form-select-time-not-check-bg: #f2f4f8; // 时间选择插件未选中颜色
+$form-select-time-hover-bg: #eceef3;	// 时间选择插件正在选颜色
+$form-select-time-checked-bg: #119dff;	// 时间选择插件已选中颜色
+$form-tab-plan-create: #fdfdfd;	// 计划创建上的tab也背景色
+
+// tag
+$tag-border-color-selected: #465fdf; // 已选tag的border颜色
+$tag-border-color-default: #cccccc; // 未选tag的border颜色
+$tag-bg-default-color: #f2f7fa; // tag填充颜色
+$tag-bg-selected-color: #119DFF;
+$tag-font-selected-color: #fff;
+
+// 表格颜色
+$table-color-zebra: #f4f7fa; // 表格相间斑马颜色
+$table-color-zebra-2: #ffffff; // 表格相间斑马颜色2
+$table-color-border: #f4f7fa; // 表格border颜色
+$table-color-hover: #f2f4f8; // 鼠标hover时的颜色
+$table-color-header: #f4f7fa; //表格表头背景
+
+// toolkit card
+$card-shadow-color: #eee;
+
+// report total card
+$bg-report-card-color: #fafafa;
+$bg-progess-color: #119DFF;
+
+// 其他主色
+$white: #ffffff; // 白色
+$blue: #495fdf; // 蓝色
+$red: #ff4446; // 红色
+$gray: #f2f4f8; // 灰色
+$border-gray: #eceef3; // 灰色边框色
+$box-shadow-gray: #dddddd;

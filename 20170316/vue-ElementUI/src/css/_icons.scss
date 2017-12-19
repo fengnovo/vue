@@ -1,0 +1,788 @@
+@import './_libCommons';
+
+@mixin icon {
+  display: inline-block;
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    vertical-align: middle;
+    background: {
+      image: url("//x.360buyimg.com/images/yizhitou/icon.png");
+      repeat: no-repeat;
+    }
+  }
+}
+
+// 右侧导航open，close的icon
+// 灰色hamburger
+.icon-nav {
+  @include icon;
+  &:before {
+    width: 20px;
+    height: 18px;
+    background-position: -2074px -169px;
+  }
+}
+
+// 白色hamburger
+.icon-nav-rotate {
+  @include icon;
+  &:before {
+    width: 30px;
+    height: 30px;
+    background-position: -261px -79px;
+  }
+  @prefix (transform, rotate(90deg));
+}
+
+// 站内信icon
+.icon-message {
+  @include icon;
+  &:before {
+    background-position: -1830px -94px;
+  }
+}
+
+// 链接icon
+.icon-connect {
+  @include icon;
+  &:before {
+    width: 46px;
+    height: 18px;
+    background-position: -427px -86px;
+  }
+}
+
+// 灰色三角icon
+.icon-arrow-gray {
+  @include icon;
+  &:before {
+    width: 50px;
+    height: 50px;
+    background-position: -509px -73px;
+  }
+}
+
+// 灰色小三角icon
+.icon-arrow-gray-small {
+  @include icon;
+  &:before {
+    width: 14px;
+    height: 14px;
+    background-position: -1948px -98px;
+  }
+}
+
+// 白色三角icon
+.icon-arrow-white {
+  @include icon;
+  &:before {
+    width: 50px;
+    height: 50px;
+    background-position: -597px -73px;
+  }
+}
+
+// 白色小三角icon
+.icon-arrow-white-small {
+  @include icon;
+  &:before {
+    width: 14px;
+    height: 14px;
+    background-position: -1982px -98px;
+  }
+}
+
+// 白色账户icon
+.icon-account-white {
+  @include icon;
+  &:before {
+    width: 30px;
+    height: 30px;
+    background-position: -1595px -443px;
+  }
+}
+
+// 主页灰色icon
+.icon-main-gray {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1714px -167px;
+  }
+}
+
+// 推广灰色icon
+.icon-advertise-gray {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1714px -236px;
+  }
+}
+
+// 报表灰色icon
+.icon-chart-gray {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1714px -306px;
+  }
+}
+
+// DMP灰色icon
+.icon-dmp-gray {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1714px -375px;
+  }
+}
+
+// 账户灰色icon
+.icon-account-gray {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1714px -444px;
+  }
+}
+
+// 工具箱灰色icon
+.icon-tool-gray {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1714px -514px;
+  }
+}
+
+// 帮助灰色icon
+.icon-help-gray {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1714px -583px;
+  }
+}
+
+// 设置灰色icon
+.icon-setting-gray {
+  @include icon;
+  &:before {
+    width: 18px;
+    height: 18px;
+    background-position: -2081px -661px;
+  }
+}
+
+// 站内信灰色icon
+.icon-letter-gray {
+  @include icon;
+  &:before {
+    width: 23px;
+    height: 21px;
+    background-position: -1717px -725px;
+  }
+}
+
+// 电源灰色icon
+.icon-power-gray {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1715px -790px;
+  }
+}
+
+// 电源白色icon
+.icon-power-white {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1598px -790px;
+  }
+}
+
+// 包包灰色icon
+// .icon-package-gray {
+//   @include icon;
+//   &:before {
+//     background-position: -1710px -1074px;
+//   }
+// }
+
+// 主页蓝色icon
+.icon-main-blue {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1656px -167px;
+  }
+}
+
+// 推广蓝色icon
+.icon-advertise-blue {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1656px -236px;
+  }
+}
+
+// 报表蓝色icon
+.icon-chart-blue {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1656px -306px;
+  }
+}
+
+// DMP蓝色icon
+.icon-dmp-blue {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1656px -375px;
+  }
+}
+
+// 账户蓝色icon
+.icon-account-blue {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1656px -444px;
+  }
+}
+
+// 工具箱蓝色icon
+.icon-tool-blue {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1656px -514px;
+  }
+}
+
+// 帮助蓝色icon
+.icon-help-blue {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1656px -583px;
+  }
+}
+
+// 设置蓝色icon
+.icon-setting-blue {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1656px -653px;
+  }
+}
+
+// 站内信蓝色icon
+.icon-letter-blue {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1657px -721px;
+  }
+}
+
+// 电源蓝色icon
+.icon-power-blue {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 28px;
+    background-position: -1657px -790px;
+  }
+}
+
+// 包包蓝色icon
+.icon-package-blue {
+  @include icon;
+  &:before {
+    background-position: -1653px -1074px;
+  }
+}
+
+// 关闭/叉icon
+.icon-cross {
+  @include icon;
+  &:before {
+    width: 32px;
+    height: 32px;
+    background-position: -2050px -1068px;
+  }
+}
+
+// 具有动效的关闭按钮
+.icon-cross-rotate {
+  @include icon;
+  &:before {
+    width: 32px;
+    height: 32px;
+    background-position: -2050px -1068px;
+  }
+  &:hover {
+    transform: rotate(180deg);
+  }
+  @include prefix('transition', transform .5s ease)
+}
+
+// 删除图标
+.icon-delete {
+  @include icon;
+  &:before {
+    position: relative;
+    top: -1px;
+    width: 21px;
+    height: 21px;
+    background-position: -1909px -960px;
+  }
+}
+
+// 播放图标
+.icon-start {
+  @include icon;
+  &:before {
+    width: 27px;
+    height: 27px;
+    background-position: -1824px -306px;
+  }
+}
+
+// 暂停图标
+.icon-stop {
+  @include icon;
+  &:before {
+    width: 27px;
+    height: 27px;
+    background-position: -1771px -307px;
+  }
+}
+
+// 编辑图标
+.icon-edit {
+  @include icon;
+  &:before {
+    background-position: -1906px -1237px;
+  }
+}
+
+// 问号
+.icon-question {
+  @include icon;
+  &:before {
+    background-position: -1930px -307px;
+  }
+}
+
+// 放大镜icon
+.icon-scale {
+  @include icon;
+  &:before {
+    background-position: -1982px -307px;
+  }
+}
+
+// 搜索小icon 与放大镜一样
+.icon-search {
+  @include icon;
+  &:before {
+    background-position: -1982px -307px;
+  }
+}
+
+// 排序icon
+.icon-order {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+  &:after {
+    content: '';
+    display: block;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid #b5b5b5;
+    margin-top: 2px;
+  }
+  &:before {
+    content: '';
+    display: block;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 6px solid #b5b5b5;
+  }
+}
+
+// 升序icon
+.icon-order-asc {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+  &:after {
+    content: '';
+    display: block;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid #b5b5b5;
+    margin-top: 2px;
+  }
+  &:before {
+    content: '';
+    display: block;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 6px solid #3e3c3c;
+  }
+}
+
+// 降续icon
+.icon-order-desc {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+  &:after {
+    content: '';
+    display: block;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid #3e3c3c;
+    margin-top: 2px;
+  }
+  &:before {
+    content: '';
+    display: block;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 6px solid #b5b5b5;
+  }
+}
+
+// transfer 箭头icon
+.icon-transfer-arrow {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 26px;
+  &:before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 14px;
+    background-color: #eee;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: -6px;
+    left: 25px;
+    width: 0;
+    height: 0;
+    border: 13px solid transparent;
+    border-left-color: #eee;
+  }
+}
+
+// 下载白色箭头icon
+.icon-download-white {
+  @include icon;
+  &:before {
+    width: 18px;
+    height: 18px;
+    background-position: -2107px -661px;
+  }
+}
+
+// 上传白色箭头icon
+.icon-upload-white {
+  @include icon;
+  &:before {
+    width: 18px;
+    height: 18px;
+    background-position: -2107px -685px;
+  }
+}
+
+// 左边箭头< icon
+.icon-left-arrow {
+  @include icon;
+  &:before {
+    background-position: -1979px -239px;
+  }
+}
+
+// 右边箭头> icon
+.icon-right-arrow {
+  @include icon;
+  &:before {
+    background-position: -2013px -239px;
+  }
+}
+
+// 登录图标人头 icon
+.icon-login-header {
+  @include icon;
+  &:before {
+    width: 30px;
+    height: 30px;
+    background-position: -2025px -376px;
+  }
+}
+
+// 登录密码锁 icon
+.icon-password-lock {
+  @include icon;
+  &:before {
+    width: 30px;
+    height: 30px;
+    background-position: -2025px -442px;
+  }
+}
+
+// 大白色上传图片 icon
+.icon-upload-image {
+  @include icon;
+  &:before {
+    width: 48px;
+    height: 48px;
+    background-position: -1764px -508px;
+  }
+}
+
+// 大白色声音喇叭 icon
+.icon-sound-white {
+  @include icon;
+  &:before {
+    width: 50px;
+    height: 50px;
+    background-position: -1824px -507px;
+  }
+}
+
+// 大白色DMP管理 icon
+.icon-dmp-white {
+  @include icon;
+  &:before {
+    width: 48px;
+    height: 48px;
+    background-position: -1881px -510px;
+  }
+}
+
+// 白色大加号+ icon
+.icon-plus-white {
+  @include icon;
+  &:before {
+    width: 24px;
+    height: 24px;
+    background-position: -2054px -1136px;
+  }
+}
+
+.icon-add-white {
+  @include icon;
+  &:before {
+    width: 18px;
+    height: 18px;
+    background-position: -2081px -685px;
+  }
+}
+
+// 大圆圈包对号 确认知道该消息
+.icon-round-right {
+  @include icon;
+  &:before {
+    width: 120px;
+    height: 120px;
+    background-position: -1769px -672px;
+  }
+}
+
+// 火箭，首页广告投放中
+.icon-rocket {
+  @include icon;
+  &:before {
+    width: 38px;
+    height: 47px;
+    background-position: -1766px -160px;
+  }
+}
+
+// 时钟，首页广告待审核
+.icon-clock {
+  @include icon;
+  &:before {
+    width: 47px;
+    height: 47px;
+    background-position: -1832px -160px;
+  }
+}
+
+// 叉，首页广告审核不通过
+.icon-reject {
+  @include icon;
+  &:before {
+    width: 47px;
+    height: 47px;
+    background-position: -1900px -160px;
+  }
+}
+
+// 小删除图标
+.icon-remove-small {
+  @include icon;
+  &:before {
+    width: 14px;
+    height: 14px;
+    background-position: -1980px -171px;
+  }
+}
+
+// 眼睛，首页展现量
+.icon-eye {
+  @include icon;
+  &:before {
+    width: 29px;
+    height: 20px;
+    background-position: -1772px -380px;
+  }
+}
+
+// 闪电icon, 首页点击率
+.icon-lightning {
+  @include icon;
+  &:before {
+    width: 30px;
+    height: 26px;
+    background-position: -1877px -377px;
+  }
+}
+
+// 鼠标点击箭头， 首页点击量
+.icon-mouse {
+  @include icon;
+  &:before {
+    width: 24px;
+    height: 22px;
+    background-position: -1827px -379px;
+  }
+}
+
+// 钱包，首页消耗
+.icon-wallet {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 24px;
+    background-position: -1931px -378px;
+  }
+}
+
+// 复制
+.icon-copy {
+  @include icon;
+  &:before {
+    width: 28px;
+    height: 24px;
+    background-position: -1878px -585px;
+  }
+}
+
+// 电话
+.icon-phone {
+  @include icon;
+  &:before {
+    width: 21px;
+    height: 22px;
+    background-position: -2028px -657px;
+  }
+}
+
+.icon-delete-large {
+  @include icon;
+  &:before {
+    width: 26px;
+    height: 26px;
+    background-position: -2025px -794px;
+  }
+}
+
+.icon-down-arrow-circle {
+  @include icon;
+  &:before {
+    width: 34px;
+    height: 34px;
+    background-position: -2079px -791px;
+  }
+}
+
+.icon-up-arrow-circle {
+  @include icon;
+  &:before {
+    width: 34px;
+    height: 34px;
+    background-position: -2079px -851px;
+  }
+}
+
+.icon-recommend {
+  @include icon;
+  position: absolute;
+  left: 0;
+  top: 0;
+  &:before {
+    width: 35px;
+    height: 35px;
+    background-position: -2027px -719px;
+  }
+}
+
+//.icon-corporation {
+//  @include icon;
+//  &:before {
+//    width: 37px;
+//    height: 33px;
+//    background-position: -1970px -719px;
+//  }
+//}
+
+// 小白色×
+.icon-white-bad {
+  @include icon;
+  &:before {
+    width: 20px;
+    height: 20px;
+    background-position: -2007px -168px;
+  }
+}

@@ -1,0 +1,31 @@
+body {
+    .el-icon-arrow-left:before {
+        content: '前一页';
+    }
+    .el-icon-arrow-right:before {
+        content: '后一页';
+    }
+    .el-pagination .btn-prev {
+        background-color: #f6f7fc;
+        margin-right: 10px;
+        border-right: 1px solid #d1dbe5;
+        border-radius: 0;
+    }
+    .el-pagination .btn-next {
+        background-color: #f6f7fc;
+        margin-left: 10px;
+        border-left: 1px solid #d1dbe5;
+        border-radius: 0;
+    }
+    .el-pagination .el-select .el-input input {
+        border-radius: 0;
+    }
+    .el-pager li {
+        font-size: 16px;
+    }
+    .el-pager li.active {
+        background-color: #495FDF;
+        border-color: #495FDF;
+        font-size: 16px;
+    }
+}

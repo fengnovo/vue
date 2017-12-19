@@ -1,0 +1,58 @@
+@import './_colors';
+
+// font size
+$font-size-small: 12px;
+$font-size-regular: 14px;
+$font-size-large: 16px;
+$font-size-x-large: 18px;
+$font-size-xx-large: 20px;
+$font-size-xxx-large: 24px;
+$font-size-xxxx-large: 28px;
+
+// font weight
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+
+// line height
+$line-height-small: 24px;
+$line-height-regular: 36px;
+$line-height-large: 48px;
+
+
+
+.text-small {
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+}
+.text-regular {
+  font-size: $font-size-regular;
+  line-height: $line-height-small;
+}
+.text-large {
+  font-size: $font-size-large;
+  line-height: $line-height-regular;
+}
+.text-x-large {
+  font-size: $font-size-x-large;
+  line-height: $line-height-regular;
+}
+.text-xx-large {
+  font-size: $font-size-xx-large;
+  line-height: $line-height-regular;
+}
+.text-xxx-large {
+  font-size: $font-size-xxx-large;
+  line-height: $line-height-large;
+}
+.text-xxxx-large {
+  font-size: $font-size-xxxx-large;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-large;
+}
+.text-danger {
+  color: $form-button-danger !important;
+}
+.text-tips {
+  color: $text-color-describe;
+}

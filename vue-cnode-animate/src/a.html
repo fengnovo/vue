@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>子路由</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="https://cdn.bootcss.com/vue/2.3.3/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-router/2.5.3/vue-router.js"></script>
+    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <style type="text/css">
+        html,body{overflow: hidden;}
+
+        img {
+          max-width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <p>
+            <router-link to="/">首页</router-link>
+            <router-link :to="{name:'list'}">列表</router-link>
+        </p>
+        <router-view name="shit"></router-view>
+        <router-view></router-view>
+    </div>
+    <template id="index">
+        <div>
+            <h1>首页</h1>
+            <img src="http://img2.imgtn.bdimg.com/it/u=3697400345,3162158875&fm=27&gp=0.jpg">
+        </div>
+    </template>
+    <template id="list">
+        <div>
+            <p>
+                <router-link
+                    v-for="item in items"
+                    :key="item.id"
+                    :to="{name:'list.rp',params:{rp:item.url}}">
+                        {{item.text}}
+                </router-link>
+            </p>
+            <transition enter-active-class="animated bounceInDown" leave-active-class="animated bounceOutLeft">
+                <router-view name="shit2"></router-view>
+            </transition>
+            <router-view></router-view>
+        </div>
+    </template>
+    <template id="detail">
+        <div v-show="isShow">
+            <!-- <p>{{$route.params.rp}}</p> -->
+
+                <img :src="$route.params.rp" width="100%">
+
+        </div>
+    </template>
+    <template id="footer">
+        <h3>i am footer</h3>
+    </template>
+    <script type="text/javascript">
+
+        const Index = {
+            template:"#index"
+        }
+        const List = {
+            template:"#list",
+            data(){
+                return{
+                    items:[
+                        {
+                            text:'1',
+                            url:'http://img5.imgtn.bdimg.com/it/u=3238798642,386957215&fm=27&gp=0.jpg',
+                        },
+                        {
+                            text:'2',
+                            url:'http://img1.imgtn.bdimg.com/it/u=17146205,3821767040&fm=27&gp=0.jpg',
+                        },
+                        {
+                            text:'3',
+                            url:'http://img4.imgtn.bdimg.com/it/u=3382814540,24819152&fm=27&gp=0.jpg'
+                        }
+                    ]
+                }
+            }
+        }
+        const Detail = {
+            template:"#detail",
+            data(){
+                return{
+                    isShow:false
+                }
+            },
+            mounted(){
+                this.isShow = true
+            }
+        }
+        const Footer = {
+            template:"#footer"
+        }
+
+
+        let router = new VueRouter({
+            routes:[
+                {
+                    path:'/',
+                    components:{
+                        shit:Index,
+                        default:List
+                    }
+                },
+                {
+                    path:'/list',
+                    name:'list',
+                    component:List,
+                    'children':[
+                        {
+                            path:':rp',
+                            name:'list.rp',
+                            components:{
+                                shit2:Detail,
+                                default:Footer
+                            }
+                        }
+                    ]
+                },
+                {
+                    path:'*',
+                    component:Index
+                }
+            ]
+        });
+        new Vue({
+            router,
+            el:"#box"
+        })
+    </script>
+</body>
+
+</html>
