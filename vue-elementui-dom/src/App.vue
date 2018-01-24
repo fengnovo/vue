@@ -54,38 +54,34 @@
                     });       
                 });
             },
-            onChange(data) {
-                console.log(data);
-            },
             alertMe: function() {
                 const h = this.$createElement;
                 let _this = this;
-                let close = false;
+                let tempData;
                 this.$alert('请输入邮箱', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
                     message: h('div', null, [
                         h(InputComponent, {
                             props: {
-                                a: 'foo',
-                                close
+                                a: 'foo'
                             },
                             on: {
-                                onChange: _this.onChange
-                            },
-                            ref: 'myRef'
+                                change: data => {
+                                    tempData = data;
+                                }
+                            }
                         })
                     ]),
                     beforeClose: (action, instance, done) => {
-                        close = true;
+                        console.log(tempData);
                         done();
                     }
                 }).then((action, instance, done) => {
                     this.$message({
                         type: 'success',
-                        message: '你'
+                        message: tempData
                     });
-                    console.log(action, instance, done);
                 }).catch(() => {
                     this.$message({
                         type: 'info',

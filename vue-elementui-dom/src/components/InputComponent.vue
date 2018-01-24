@@ -8,7 +8,7 @@
 <script>
 export default {
   name: 'input-component',
-  props: ['a','onChange','close'],
+  props: ['a','change'],
   data() {
     return {
       input: ''
@@ -16,21 +16,7 @@ export default {
   },
   watch: {
     input: function() {
-      // this.$emit('onChange', this.input);
-    },
-    close: function(newVal,oldVal) {
-      console.log(newVal);
-      if (val) {
-        this.$emit('onChange', this.input);
-      }
-    },
-  },
-  created() {
-    console.log(this.close);
-  },
-  method: {
-    getData() {
-      return this.input;
+      this.$emit('change', this.input);
     }
   }
 }
