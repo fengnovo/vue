@@ -1,22 +1,33 @@
 <template>
   <div>
     <p>{{a}}</p>
-    <el-input v-model="input" placeholder="请输入内容"></el-input>
+    <p>{{b}}</p>
+    <el-input v-model="obj.input" placeholder="请输入内容"></el-input>
   </div>
 </template>
 
 <script>
+const EMUT = {
+  NUM:'input'
+}
 export default {
   name: 'input-component',
   props: ['a','change'],
   data() {
     return {
-      input: ''
+      obj: {
+        input: ''
+      }
+    }
+  },
+  computed: {
+    b() {
+      return this.obj[EMUT.NUM]
     }
   },
   watch: {
-    input: function() {
-      this.$emit('change', this.input);
+    'b'() {
+      this.$emit('change', this.obj);
     }
   }
 }
