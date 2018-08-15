@@ -8,12 +8,14 @@
         <button @click='alertMe'>弹框alert</button>
         <br />
         <InputComponent a='sdfsdf'></InputComponent>
+        <AutoSearch></AutoSearch>
     </div> 
 </template>
 
  
 <script>  
     import InputComponent from '@/components/InputComponent.vue';
+    import AutoSearch from '@/components/AutoSearch.vue';
     export default {
         data() {
             return {
@@ -22,7 +24,8 @@
             }
         },  
         components: { 
-            InputComponent, 
+            InputComponent,
+            AutoSearch,
             component1: { //第一个子组件  
                 template: "<div>这里是子组件1</div>"  
             },  
