@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>状态共享</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="div1">
+  {{ message1 }}
+  {{ message2 }}
+</div>
+<hr />
+<div id="div2">
+  {{ message2 }}
+  <!-- {{ message3 }} -->
+  <br/>
+  <input type="text" v-model="message2" name="">
+</div>
+<script>
+const sourceOfTruth = {
+    message1:'div1的内容',
+    message2:'div2的内容'
+}
+const vmA = new Vue({
+    el:'#div1',
+    data: sourceOfTruth
+});
+const vmB = new Vue({
+    el:'#div2',
+    data: sourceOfTruth
+});
+</script>
+</body>
+</html>

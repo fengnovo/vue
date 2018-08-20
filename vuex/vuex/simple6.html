@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>状态共享</title>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+<script src="https://unpkg.com/vuex@2.0.0/dist/vuex.js"></script>
+</head>
+<body>
+<div id="div1">
+  {{ sharedState.message1 }}
+  {{ sharedState.message2 }}
+  {{ privateState.message3 }}
+  {{ privateState.message4 }}
+  <button @click="clearMessageAction">清除sharedState.message2</button>
+</div>
+<hr />
+<div id="div2">
+  {{ sharedState.message2 }}
+  {{ privateState.message3 }}
+  <br/>
+  <input type="text" v-model="message2" name="">
+</div>
+<script>
+var store = new Vuex.Store({
+    strict: true,
+    state: {
+        message: 'Hello!',
+        message1:'div1的内容',
+        message2:'div2的内容'
+    },
+    mutations: {
+        setMessageAction (state, newValue) {
+            console.log('setMessageAction triggered with', newValue)
+            state.message2 = newValue
+        },
+        clearMessageAction (state) {
+            console.log('clearMessageAction triggered')
+            state.message2 = ''
+        }
+    }
+});
+var vmA = new Vue({
+    el:'#div1',
+    store,
+    data: {
+        privateState: {
+            message4:'div4的内容'
+        }
+    },
+    computed: {
+        sharedState() {
+            return this.$store.state
+        }
+    },
+    methods: {
+        clearMessageAction: () => {
+            this.$store.commit('clearMessageAction')
+        }
+    }
+})
+
+var vmB = new Vue({
+    el:'#div2',
+    store,
+    data: {
+        privateState: {
+            message3:'div3的内容'
+        },
+    },
+    computed: {
+        sharedState() {
+            return this.$store.state
+        },
+        message2: {
+            get() {
+                return this.$store.state.message2;
+            },
+            set(val) {
+                this.$store.commit('setMessageAction', val);
+            }
+        }
+    }
+})
+</script>
+</body>
+</html>
