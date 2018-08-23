@@ -20,26 +20,12 @@ export default {
       'count',
       'isOdd'
     ]),
-    // computed: {
-    //     ...mapGetters([
-    //       'count',
-    //       'isOdd'
-    //     ])
-    // },
     methods:mapActions([
         'increment',
         'decrement',
         'OddIncrement',
         'incerementAync'
     ])
-    // methods: {
-    //     ...mapActions([
-    //         'increment',
-    //         'decrement',
-    //         'OddIncrement',
-    //         'incerementAync'
-    //     ])
-    // }
 }
 </script>
 

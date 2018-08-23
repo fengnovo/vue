@@ -8,16 +8,20 @@
 <script src="https://unpkg.com/vuex@2.0.0/dist/vuex.js"></script>
 </head>
 <body>
-<div id="div1">
+<div id="div1" style="background-color: #ccc;">
   {{ sharedState.message1 }}
+  <br />
   {{ sharedState.message2 }}
+  <br />
   {{ privateState.message3 }}
+  <br />
   {{ privateState.message4 }}
   <button @click="clearMessageAction">清除sharedState.message2</button>
 </div>
 <hr />
-<div id="div2">
+<div id="div2" style="background-color: #CDDC39;">
   {{ sharedState.message2 }}
+  <br />
   {{ privateState.message3 }}
   <br/>
   <input type="text" v-model="sharedState.message2" name="">
@@ -26,9 +30,8 @@
 var store = new Vuex.Store({
     strict: true,
     state: {
-        message: 'Hello!',
-        message1:'div1的内容',
-        message2:'div2的内容'
+        message1:'共享的内容1',
+        message2:'共享的内容2'
     },
     mutations: {
         setMessageAction (state, newValue) {
@@ -45,7 +48,7 @@ var vmA = new Vue({
     el:'#div1',
     data: {
         privateState: {
-            message4:'div4的内容'
+            message4:'div1的内容'
         },
         sharedState: store.state
     },
@@ -60,7 +63,7 @@ var vmB = new Vue({
     el:'#div2',
     data: {
         privateState: {
-            message3:'div3的内容'
+            message3:'div2的内容'
         },
         sharedState: store.state
     }
