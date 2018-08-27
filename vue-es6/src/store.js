@@ -4,7 +4,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-	count: 10
+	count: 10,
+	data: ''
 }
 
 const mutations = {
@@ -13,6 +14,10 @@ const mutations = {
 	},
 	decrement(state) {
 		state.count--
+	},
+	setData(state, playload) {
+		state.data = playload.a;
+		console.log(state.data);
 	}
 }
 
@@ -44,6 +49,21 @@ const actions = {
 				resolve()
 			},3000)
 		})
+	},
+	async fetchData({
+		commit, state, dispatch
+	}) {
+		let res = await fetch('https://cnodejs.org/api/v1/topics?page=1&tab=share&limit=1&mdrender=false');
+		console.log(res);
+		let a = res.text();
+		// a = JSON.parse(a);
+		console.log(a);
+		a.then((resolve, reject) => {
+			console.log(a);
+			commit('setData', { a });
+			// resolve();
+		});
+        
 	}
 }
 

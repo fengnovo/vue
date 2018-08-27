@@ -5,37 +5,34 @@
     <input type="button" value="减少" @click="decrement"/>
     <input type="button" value="增加" @click="OddIncrement"/>
     <input type="button" value="减少" @click="incerementAync"/>
+    <input type="button" value="fetchData" @click="fetchData"/>
     <p>
          现在数字是：{{count}}，现在是{{isOdd}}
+    </p>
+    <p>
+      {{data}}
     </p>
   </div>
 </template>
 
   <script>
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 
 export default {
     name: 'app',
     computed: {
-        count() {
-            return this.$store.state.count;
-        },
-        isOdd() {
-            return this.$store.getters.isOdd;
-        }
+      ...mapState(['count', 'data']),
+      ...mapGetters(['isOdd'])
     },
     methods: {
-        increment() {
-            this.$store.dispatch('increment')
-        },
-        decrement() {
-            this.$store.dispatch('decrement')
-        },
-        OddIncrement() {
-            this.$store.dispatch('OddIncrement')
-        },
-        incerementAync() {
-            this.$store.dispatch('incerementAync')
-        }
+      ...mapMutations([
+          'increment',
+          'decrement']),
+      ...mapActions([
+          'OddIncrement',
+          'incerementAync',
+          'fetchData'
+      ])
     }
 }
 </script>

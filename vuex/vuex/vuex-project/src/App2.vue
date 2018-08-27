@@ -12,31 +12,20 @@
 </template>
 
   <script>
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
     name: 'app',
-    computed: {
-        count() {
-            return this.$store.state.count;
-        },
-        isOdd() {
-            return this.$store.getters.isOdd;
-        }
-    },
-    methods: {
-        increment() {
-            this.$store.dispatch('increment')
-        },
-        decrement() {
-            this.$store.dispatch('decrement')
-        },
-        OddIncrement() {
-            this.$store.dispatch('OddIncrement')
-        },
-        incerementAync() {
-            this.$store.dispatch('incerementAync')
-        }
-    }
+    computed: mapGetters([
+      'count',
+      'isOdd'
+    ]),
+    methods: mapActions([
+        'increment',
+        'decrement',
+        'OddIncrement',
+        'incerementAync'
+    ])
 }
 </script>
 
